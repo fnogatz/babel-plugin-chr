@@ -1,0 +1,39 @@
+{
+  "name": "babel-plugin-chr",
+  "version": "1.0.0-beta0",
+  "description": "Babel plugin that precompiles CHR.js source code",
+  "main": "index.js",
+  "scripts": {
+    "standard": "standard",
+    "tape": "babel-tape-runner test/*.js test/**/**.js",
+    "test": "npm run standard && npm run tape",
+    "fetch-tests": "cp ./node_modules/chr/test/jit-compiler/* test/ && replace \"require\\('../../src/index'\\)\" \"require('chr')\" test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fnogatz/babel-plugin-chr"
+  },
+  "keywords": [
+    "CHR",
+    "CHR.js",
+    "Constraint",
+    "Handling",
+    "Rules",
+    "babel-plugin",
+    "constraints"
+  ],
+  "author": "Falco Nogatz <fnogatz@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fnogatz/babel-plugin-chr/issues"
+  },
+  "homepage": "https://github.com/fnogatz/babel-plugin-chr",
+  "dependencies": {
+    "chr": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-tape-runner": "^1.1.0",
+    "replace": "^0.3.0",
+    "standard": "^5.0.0-2"
+  }
+}
