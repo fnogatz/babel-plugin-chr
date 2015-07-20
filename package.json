@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-chr",
-  "version": "1.0.0-beta0",
+  "version": "1.0.0",
   "description": "Babel plugin that precompiles CHR.js source code",
   "main": "index.js",
   "scripts": {
