@@ -24,6 +24,21 @@ module.exports = function (babel) {
         this.parentPath.replaceWithSourceString(
           runtimeName + ' = require("chr/runtime")'
         )
+      } else if (node.type === 'CallExpression' && constructors.indexOf(node.callee.name) >= 0) {
+        assign(parent, function (name) {
+          instances[name] = newInstance(name)
+        })
+
+        this.replaceWithSourceString([
+          '{',
+          'Store: new ' + runtimeName + '.Store(),',
+          'History: new ' + runtimeName + '.History(),',
+          'Constraints: {},',
+          'Replacements: []',
+          '}'
+        ].join('\n'))
+
+        return
       } else if ((node.type === 'CallExpression' && instances.hasOwnProperty(node.callee.name)) ||
         (node.type === 'TaggedTemplateExpression') && instances.hasOwnProperty(node.tag.name)) {
         // Found: "chr(...)"
