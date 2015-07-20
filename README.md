@@ -5,7 +5,7 @@ Babel plugin that precompiles [CHR.js](https://github.com/fnogatz/CHR.js) source
 ## Install
 
 ```sh
-npm install babel-plugin-graphql
+npm install babel-plugin-chr
 ```
 
 ## Usage
